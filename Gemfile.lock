@@ -41,6 +41,7 @@ GEM
       webrick (~> 1.7)
     bridgetown-paginate (0.21.5)
       bridgetown-core (= 0.21.5)
+    byebug (11.1.3)
     colorator (1.1.0)
     concurrent-ruby (1.1.9)
     erubi (1.10.0)
@@ -103,9 +104,11 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  ruby
 
 DEPENDENCIES
   bridgetown (~> 0.21.5)
+  byebug
 
 BUNDLED WITH
    2.2.22

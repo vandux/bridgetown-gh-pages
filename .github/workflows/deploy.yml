@@ -1,0 +1,36 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@master
+        with:
+          ruby-version: "2.7.1"
+      - name: Install Dependencies
+        run: |
+          bundle config path vendor/bundle
+          bundle install
+          yarn install
+      - name: Build site for deployment
+        run: yarn deploy --base_path="/bridgetown-gh-pages"
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

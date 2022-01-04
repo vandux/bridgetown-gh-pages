@@ -15,12 +15,13 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 
-url: "" # the base hostname & protocol for your site, e.g. https://example.com
-
+url: "https://www.shaunrussell.com" # the base hostname & protocol for your site, e.g. https://example.com
+base_path: "/bridgetown-gh-pages"
 permalink: pretty
+include: [ ".nojekyll" ]
 
 # Other options you might want to investigate:
-# 
+#
 # base_path: "/" # the subpath of your site, e.g. /blog
 # timezone: America/Los_Angeles
 # pagination:
