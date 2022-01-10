@@ -7,8 +7,6 @@ categories: web-development
 
 Github is a great place to host your static website. Unfortunately Bridgetown does not have good documentation for settting this up. The `https://github.com/andrewmcodes/bridgetown-gh-pages-action` has issues.
 
-First you will need to create a branch for github pages `gh-pages`, push it to origin.
-
 Configure Github Actions workflow by creating a file at `.github/workflows/deploy.yml` and populating it with this template:
 
 ```yml
